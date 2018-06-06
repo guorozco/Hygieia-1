@@ -8,7 +8,7 @@ node {
     }
     
      stage('Build code') {
-        sh "'${mvnHome}/bin/mvn' clean install"
+        sh "mvn clean install"
     }
 
     stage('Build image') {
