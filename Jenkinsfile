@@ -1,25 +1,27 @@
-pipeline {
-   
-  agent none
-  stages {
-      steps {
-        sh 'mvn clean install'
-      }
+node {
+    def app
+
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        checkout scm
     }
-    stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build -t guiumana/hygieia:latest .'
-      }
+    
+     stage('Build code') {
+        sh "mvn clean install"
     }
-    stage('Docker Push') {
-      agent any
-      steps {
-        withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'dockerPassword', usernameVariable: 'dockerUser')]) {
-          sh "docker login -u ${env.dockerUser} -p ${env.dockerPassword}"
-          sh 'docker push guiumana/hygieia:latest'
+
+    stage('Build image') {
+
+       sh "docker-compose build"
+    }
+
+    stage('Push image') {
+        
+        docker.withRegistry('https://registry.hub.docker.com', 'docker') {
+        def customImage = docker.build("my-image:${env.BUILD_ID}")
+        /* Push the container to the custom Registry */
+        app.push("latest")     
         }
-      }
     }
-  }
 }
