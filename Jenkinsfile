@@ -1,10 +1,7 @@
-#!groovy
-
 pipeline {
    
   agent none
   stages {
-      }
       steps {
         sh 'mvn clean install'
       }
