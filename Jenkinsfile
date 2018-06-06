@@ -19,7 +19,7 @@ node {
     stage('Push image') {
         
         docker.withRegistry('https://registry.hub.docker.com', 'docker') {
-        def customImage = docker.build("my-image:${env.BUILD_ID}")
+        def customImage = docker.build("guiumana/hygieia")
         /* Push the container to the custom Registry */
         app.push("latest")     
         }
