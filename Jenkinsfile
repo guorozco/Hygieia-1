@@ -13,7 +13,7 @@ node {
 
     stage('Build image') {
 
-       sh "'docker-compose build'"
+       sh "docker-compose build"
     }
 
 
