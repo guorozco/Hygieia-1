@@ -63,37 +63,20 @@ Then:
 * Execute `terraform plan`
 * Execute `terraform apply`
 
-* Jenkins User and password are located at `ansible/roles/jenkins/files/basic-security.groovy`
-* Add Maven and Java Paths to Global Tool Configuration
+* Configure Jenkins 
 ```
 Manage Jenkins -> Global Tool Configuration
+Configure:
 
-JDK Instalations-> Add a name
-Add JAVA_HOME /usr/java/latest
+Maven
+JDK
+GIT
+DOCKER
 
-Uncheck Install Automatially
-
-Maven Instalations-> Add a name
-Add  MAVEN_HOME /usr/local/src/maven
-
-Uncheck Install Automatially
 
 Apply and Save
 ```
-* Create the pipeline in Jenkins selecting Maven Project with the git repo parameters and the execution command
+* Create the pipeline in Jenkins select pipeline and SCM
 ```
 Git Repository 
-  https://github.com/aetorres/Hygieia.git
-
-Add your Git credentials
-
-Pre Steps -> bash
-mvn clean install package
-
-I add this step as Post-build Actions, Achive the artifacts -> Files to archive
-  collectors/*/*/*/*.jar, api/*/*.jar, api/*/*/*/*.jar, .mvn/*/*.jar, api-audit/*/*.jar, UI-tests/*/*.jar, core/*/*.jar, UI/*/*/*/*/*.jar
-
-Apply and Save
-```
-
-* Exeute the build
+  https://github.com/guorozco/Hygieia-1.git
