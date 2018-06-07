@@ -15,7 +15,7 @@ node {
     }
 
     stage('Push image') {
-          withDockerRegistry([ credentialsId: "docker", url: "https://registry.hub.docker.com" ]) {
+          withDockerRegistry([ credentialsId: "docker", url: "https://registry.hub.docker.com", usernameVariable: "USERNAME", passwordVariable: "PASSWORD"]) {
           sh 'docker login -u guiumana -p GU8605or'
           sh 'docker tag hygieia-score-collector:latest guiumana/hygieia3'
           sh 'docker push guiumana/hygieia3'               
