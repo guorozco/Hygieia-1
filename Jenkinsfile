@@ -17,7 +17,7 @@ node {
 
     stage('Push image') {
           withDockerRegistry([ credentialsId: "docker", url: "https://registry.hub.docker.com" ]) {
-          sh 'docker push guiumana/hygieia-api-audit:latest'               
+          sh 'docker push hygieia-api-audit:latest'               
         }
     }
 }
