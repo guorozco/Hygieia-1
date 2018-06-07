@@ -35,6 +35,7 @@ logs
 .pmdruleset.xml
 .classpath
 .README.md.html
+.conf-builder.sh
 
 # Eclipse specific ignore settings
 .settings/
