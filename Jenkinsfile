@@ -15,7 +15,6 @@ node {
     }
 
     stage('Push image') {
-        
           docker.withRegistry('https://registry.hub.docker.com', 'docker') {
           sh 'docker login -u guiumana -p GU8605or' 
           sh 'docker tag hygieia-score-collector:latest $USERNAME/hygieia2'
