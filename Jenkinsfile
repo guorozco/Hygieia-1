@@ -16,9 +16,11 @@ node {
 
     stage('Push image') {
           docker.withRegistry('https://registry.hub.docker.com', 'docker') {
-			 }
-          sh 'docker login -u guiusertest -p Password1' 
+	  sh 'docker login -u guiusertest -p Password1' 
           sh 'docker tag hygieia-score-collector:latest $USERNAME/hygieia2'
           sh 'docker push $USERNAME/hygieia2'
+		  
+			 }
+
     }
 }
