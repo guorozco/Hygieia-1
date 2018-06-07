@@ -6,9 +6,7 @@ node {
         checkout scm
     }
     
-     stage('Build code') {
-        sh "mvn clean install"
-    }
+
 
     stage('Build image') {
        sh "docker-compose build"
