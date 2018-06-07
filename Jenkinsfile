@@ -21,6 +21,7 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'docker') {
         def customImage = docker.build("my-image:${env.BUILD_ID}")
         /* Push the container to the custom Registry */
+        docker.script.sh "docker pull $my-image:${env.BUILD_ID}"
         app.push("latest")     
         }
     }
