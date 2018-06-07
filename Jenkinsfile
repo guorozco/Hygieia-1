@@ -16,7 +16,7 @@ node {
 
     stage('Push image') {
           withDockerRegistry([ credentialsId: "docker", url: "https://registry.hub.docker.com", usernameVariable: "USERNAME", passwordVariable: "PASSWORD"]) {
-          sh '$ cat ~/my_password.txt | docker login --username foo --password-stdin'
+          sh 'docker login -u USERNAME -p PASSWORD' 
           sh 'docker tag hygieia-score-collector:latest $USERNAME/hygieia2'
           sh 'docker push $USERNAME/hygieia2'               
         }
