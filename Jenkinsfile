@@ -23,6 +23,6 @@ node {
 	
    stage('Swarm service start') {  
 	  sh 'ssh -t root@18.217.186.86 "docker service create guiusertest/hygieia2"'
-	  sh 'ssh -t root@18.217.186.86 "docker run -t -p 8080:8080 -v -e "SPRING_DATA_MONGODB_HOST=127.0.0.1" -e "xFjy+TYrLHwDbLw7kl7HvZDL1vCfm2gV=hygieiasecret" -i guiusertest/hygieia2:latest"'
+	 
     }
 }
