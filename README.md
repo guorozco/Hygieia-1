@@ -63,6 +63,12 @@ Then:
 * Execute `terraform plan`
 * Execute `terraform apply`
 
+* Open the Ansible Folder and run the playbooks:
+```
+ansible -u centos -m ping tag_Name_jenkins_master_Gorilla --private-key=/@location_of_private_key/AWS_Gorilla_Demo.pem
+ansible-playbook main.yml -u centos tag_Name_jenkins_master_Gorilla --private-key=/@location_of_private_key/AWS_Gorilla_Demo.pem
+```
+
 * Configure Jenkins 
 ```
 Manage Jenkins -> Global Tool Configuration
