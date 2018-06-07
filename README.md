@@ -53,8 +53,8 @@ resource "aws_instance" "swarm-docker_Gorilla" {
 * On your computer export the following variables:
 Export you AWS Keys:
 ```
-export AWS_ACCESS_KEY_ID='AKIAIFG4DXQRB3K4LU5Q'
-export AWS_SECRET_ACCESS_KEY='OkpSIl78H5GFRxet+tFWI/bbQeJR1RIRL64fruOT'
+export AWS_ACCESS_KEY_ID='XXXXXXXXXXXXXXXXXXXXXXXXXX'
+export AWS_SECRET_ACCESS_KEY='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 export ANSIBLE_HOSTS=/usr/local/bin/ec2.py
 export EC2_INI_PATH=/usr/local/bin/ec2.ini
 ```
