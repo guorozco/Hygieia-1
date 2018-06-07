@@ -20,6 +20,8 @@ node {
           sh 'docker tag hygieia-score-collector:latest guiusertest/hygieia2'
           sh 'docker push guiusertest/hygieia2'
         }
-
+   
+   stage('Swarm service start') {  
+	  sh 'ssh -t root@18.217.186.86 "docker service create guiusertest/hygieia2"' 
     }
 }
