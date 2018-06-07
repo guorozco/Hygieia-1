@@ -16,7 +16,7 @@ node {
 
     stage('Push image') {
           docker.withRegistry('https://registry.hub.docker.com', 'docker' {
-          sh 'docker login --password-stdin' 
+          sh 'docker login' 
           sh 'docker tag hygieia-score-collector:latest $USERNAME/hygieia2'
           sh 'docker push $USERNAME/hygieia2'               
         }
