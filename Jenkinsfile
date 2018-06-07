@@ -17,8 +17,8 @@ node {
 
     stage('Push image') {
           withDockerRegistry([ credentialsId: "docker", url: "https://registry.hub.docker.com" ]) {
-          sh 'docker tag hygieia-score-collector:latest hygieia'
-          sh 'docker push hygieia'               
+          sh 'docker tag hygieia-score-collector:latest guiumana/hygieia3'
+          sh 'docker push guiumana/hygieia3'               
         }
     }
 }
