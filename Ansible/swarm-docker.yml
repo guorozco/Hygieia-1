@@ -1,0 +1,9 @@
+--- 
+- hosts: tag_Name_swarm_docker_Gorilla
+  become: yes
+  become_method: sudo
+  remote_user: centos
+
+  roles:
+  - swarm
+  - docker
